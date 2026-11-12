@@ -71,6 +71,11 @@
     .head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--green); margin-bottom: 10px; }
     .head p { color: var(--muted); font-size: 1.08rem; }
 
+    /* Coupon */
+    .coupon { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; max-width: 680px; margin: -16px auto 40px; padding: 18px 24px; border: 2px dashed var(--green); border-radius: 12px; background: var(--green-tint); text-align: center; }
+    .coupon-text { font-weight: 600; color: var(--ink); font-size: 1.05rem; }
+    .code { font-family: "Archivo Black", sans-serif; background: var(--green); color: var(--white); padding: 8px 18px; border-radius: 6px; letter-spacing: 0.12em; font-size: 1.1rem; }
+
     /* Filters */
     .filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
     .chip { border: 1.5px solid var(--line); background: var(--white); color: var(--muted); padding: 8px 18px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; cursor: pointer; font-family: inherit; transition: all .15s; }
@@ -92,6 +97,27 @@
     .price { font-family: "Archivo Black", sans-serif; color: var(--green); font-size: 1.2rem; }
     .soon { background: var(--white); color: var(--green); border: 1.5px solid var(--green); padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: not-allowed; font-family: inherit; }
     .hidden { display: none; }
+    .badge-alt { left: auto; right: 12px; background: var(--white); color: var(--green); border: 1.5px solid var(--green); }
+    .colors { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 0.85rem; color: var(--muted); font-weight: 600; margin: -6px 0 16px; }
+    .colors-label { color: var(--ink); margin-right: 2px; }
+    .swatch { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--green); display: inline-block; margin-left: 6px; }
+    .swatch-custom { background: conic-gradient(#004d3a, #7fc8a9, #f2c14e, #e07a5f, #3d5a80, #004d3a); }
+
+
+    /* Featured wide card */
+    .product.featured { grid-column: 1 / -1; flex-direction: row; }
+    .product.featured .thumb { flex: 0 0 38%; aspect-ratio: auto; min-height: 300px; }
+    .product.featured .thumb svg { width: 55%; height: 80%; }
+    .product.featured .info { padding: 36px 40px; justify-content: center; }
+    .product.featured h3 { font-size: 1.6rem; }
+    .product.featured .desc { font-size: 1.05rem; flex: 0; max-width: 560px; }
+    .product.featured .row { justify-content: flex-start; gap: 24px; }
+    .product.featured .price { font-size: 1.6rem; }
+    @media (max-width: 700px) {
+      .product.featured { flex-direction: column; }
+      .product.featured .thumb { flex: none; aspect-ratio: 1 / 1; min-height: 0; }
+      .product.featured .info { padding: 18px 20px 20px; }
+    }
 
     /* Story */
     .story { background: var(--green-tint); }
@@ -194,6 +220,11 @@
           <p>Preview of what's coming. Online ordering opens soon.</p>
         </div>
 
+        <div class="coupon">
+          <span class="coupon-text">If you want to cheat...again, don't forget to use the code:</span>
+          <span class="code">STRINGS</span>
+        </div>
+
         <div class="filters">
           <button class="chip active" data-filter="all">All</button>
           <button class="chip" data-filter="apparel">Apparel</button>
@@ -203,6 +234,7 @@
         </div>
 
         <div class="grid" id="products">
+
 
           <!-- Hat -->
           <article class="product" data-cat="apparel golf">
@@ -285,6 +317,28 @@
               <div class="row"><span class="price">$8</span><button class="soon" disabled>Coming Soon</button></div></div>
           </article>
 
+          <!-- Mannequin torso -->
+          <article class="product" data-cat="extras">
+            <div class="thumb"><span class="badge">GBC Gift</span><span class="badge badge-alt">Slightly Used</span>
+              <svg viewBox="16 2 88 134" aria-hidden="true">
+                <rect x="56" y="106" width="6" height="24" fill="#00382a"/>
+                <ellipse cx="59" cy="132" rx="24" ry="5" fill="#00382a"/>
+                <!-- body (side profile, facing right) -->
+                <path d="M54 20 C46 24 41 32 41 44 C41 54 46 60 45 66 C35 71 27 82 29 94 C31 104 39 107 49 107 L70 107 C76 107 79 102 79 94 C79 86 75 80 75 74 C76 64 84 56 84 44 C84 32 76 24 68 20 Z" fill="#cfe0d9" stroke="#004d3a" stroke-width="3"/>
+                <!-- tee -->
+                <path d="M54 20 C46 24 41 32 41 44 C41 54 46 60 45 66 L42 70 L76 70 C76 64 84 56 84 44 C84 32 76 24 68 20 C66 23 63 24 61 24 C58 24 56 23 54 20 Z" fill="#ffffff" stroke="#004d3a" stroke-width="3"/>
+                <path d="M58 30 C54 38 54 46 58 52" fill="none" stroke="#004d3a" stroke-width="2" stroke-dasharray="3 3"/>
+                <!-- neck -->
+                <path d="M55 8h12v14c-2 2-4 3-6 3s-4-1-6-3z" fill="#cfe0d9" stroke="#004d3a" stroke-width="2"/>
+                <ellipse cx="61" cy="8" rx="6" ry="2.5" fill="#b9cfc7" stroke="#004d3a" stroke-width="2"/>
+                <text x="70" y="54" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#004d3a">-25</text>
+              </svg>
+            </div>
+            <div class="info"><div class="cat">Extras</div><h3>The Lentegrity Torso</h3><p class="desc">Full-size torso in the Classic -25 Tee with the full backside included. Never questions your scorecard. Integrity sold separately.</p>
+              <div class="colors"><span class="colors-label">Colors:</span><span class="swatch" style="background:#ffffff"></span>White<span class="swatch" style="background:#111111"></span>Black<span class="swatch swatch-custom"></span>Custom</div>
+              <div class="row"><span class="price">$95</span><button class="soon" disabled>Coming Soon</button></div></div>
+          </article>
+
           <!-- Polo -->
           <article class="product" data-cat="apparel golf">
             <div class="thumb">
@@ -325,9 +379,9 @@
         </div>
         <div>
           <h2 class="display">The Legend of Lentegrity</h2>
-          <p>It started after Thursday Night Hockey. Beers came out in the parking lot, and Bob Lentini's integrity got called into question. Out of that came a new word: <b>Lentegrity</b>.</p>
-          <p>Then his team went out and won the TYSA Golf Tournament at an unbelievable <b>25 under par</b>. Some people still want to see the scorecard. The trophy says it happened.</p>
-          <p class="def"><b>Len·teg·ri·ty</b> (n.) — integrity that has been questioned, tested in a parking lot and backed up with a -25.</p>
+          <p>It all started at a charity golf tournament, when Bob Lentini's foursome had the audacity to turn in a scorecard of <b>25 under par</b>. Jaws dropped. Eyebrows went up. Some people still want to see that scorecard.</p>
+          <p>The questions followed Bob to Thursday Night Hockey. After the game, with the beers out in the parking lot, the guys called out his integrity, and a new word was born: <b>Lentegrity</b>.</p>
+          <p class="def"><b>Len·teg·ri·ty</b> (n.) — the kind of integrity that turns in a -25 with a straight face and defends it in a parking lot.</p>
         </div>
       </div>
     </section>
