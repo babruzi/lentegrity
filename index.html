@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lentegrity</title>
+  <meta name="description" content="Lentegrity — clarity you can trust." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12202b;
+      --ink-soft: #4a5a66;
+      --paper: #f6f4ef;
+      --card: #ffffff;
+      --accent: #1f6f78;
+      --accent-dark: #164f56;
+      --line: #e2ddd3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    header { border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 700; font-size: 1.4rem; text-decoration: none; letter-spacing: -0.01em; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul a { text-decoration: none; font-weight: 500; color: var(--ink-soft); font-size: 0.95rem; }
+    nav ul a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero { padding: 110px 0 90px; text-align: center; }
+    .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .hero h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 820px; margin: 0 auto 24px; }
+    .hero p { font-size: 1.2rem; color: var(--ink-soft); max-width: 600px; margin: 0 auto 40px; }
+    .buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-ghost { border: 1.5px solid var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* Features */
+    section { padding: 80px 0; }
+    .section-title { font-family: "Fraunces", serif; font-size: 2rem; text-align: center; margin-bottom: 48px; letter-spacing: -0.01em; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 32px; }
+    .card .num { font-family: "Fraunces", serif; color: var(--accent); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .card p { color: var(--ink-soft); }
+
+    /* About */
+    .about { background: var(--ink); color: var(--paper); }
+    .about .inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .about h2 { font-family: "Fraunces", serif; font-size: 2rem; margin-bottom: 20px; }
+    .about p { color: #c9d2d8; font-size: 1.1rem; }
+
+    /* CTA */
+    .cta { text-align: center; }
+    .cta h2 { font-family: "Fraunces", serif; font-size: 2rem; margin-bottom: 14px; }
+    .cta p { color: var(--ink-soft); margin-bottom: 32px; }
+
+    footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--ink-soft); font-size: 0.9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 640px) {
+      nav ul { gap: 16px; }
+      nav ul li:not(:last-child) { display: none; }
+      .hero { padding: 72px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="#" class="logo">Len<span>tegrity</span></a>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <!-- EDIT: replace YOUR-USERNAME/YOUR-REPO with your GitHub repo -->
+          <li><a href="https://github.com/YOUR-USERNAME/YOUR-REPO">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Open source project</span>
+        <!-- EDIT: headline and one-sentence pitch -->
+        <h1>Clarity you can trust.</h1>
+        <p>Lentegrity is an open project built in the open on GitHub. Replace this line with a one-sentence description of what it does and who it's for.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://github.com/YOUR-USERNAME/YOUR-REPO">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            View on GitHub
+          </a>
+          <a class="btn btn-ghost" href="#features">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2 class="section-title">What it does</h2>
+        <!-- EDIT: three key features or benefits -->
+        <div class="grid">
+          <div class="card">
+            <div class="num">01</div>
+            <h3>First feature</h3>
+            <p>A short sentence on the first thing Lentegrity does well.</p>
+          </div>
+          <div class="card">
+            <div class="num">02</div>
+            <h3>Second feature</h3>
+            <p>A short sentence on the second key benefit or capability.</p>
+          </div>
+          <div class="card">
+            <div class="num">03</div>
+            <h3>Third feature</h3>
+            <p>A short sentence on why someone should try it today.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap inner">
+        <h2>About the project</h2>
+        <!-- EDIT: the story behind Lentegrity -->
+        <p>Tell visitors why Lentegrity exists, who's behind it, and where it's headed. Two or three sentences is plenty.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Get involved</h2>
+        <p>Star the repo, open an issue, or send a pull request.</p>
+        <a class="btn btn-primary" href="https://github.com/YOUR-USERNAME/YOUR-REPO">Go to the repository</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; <span id="yr">2026</span> Lentegrity</span>
+      <span>lentegrity.org</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
